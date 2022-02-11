@@ -1,0 +1,40 @@
+--CRUD
+--Create thingies
+
+create database test with owner = 'arielavshalom';
+
+\l --see all of the databases available
+
+\c --to connect to a particular database
+
+drop database test;
+
+create table statburst(
+    id int,
+    color char,
+    sugar numeric(4,2),
+    size varchar(30)
+);
+
+--color
+--kcals
+--sugar content
+--size
+
+
+
+ALTER TABLE statburst
+  RENAME TO starburst;
+
+
+select * from starburst;
+
+insert into starburst values (1, 'p', 12.5, 'medium'), (2, 'g', 6.256, 'small');
+
+update starburst set color = 'y' where id = 1 ;
+
+delete from starburst where id = 1;
+
+drop table starburst;
+--insert only id and color
+insert into starburst(id, color) values (3, 'o');
