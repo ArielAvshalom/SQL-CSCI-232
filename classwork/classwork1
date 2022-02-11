@@ -1,0 +1,64 @@
+
+/*
+Save all of the code in a .txt or .sql file and submit it here.
+It is an exercise in getting our feet wet in SQL
+
+1: Create the following tables:
+A table employee with columns called id, name, title
+ id is an integer and title is a varchar.
+ Example tuple: 666, arnold benedict, super-visor
+
+A table called mage with columns called id, type, powerLevel, schoolOfMind
+ Id and powerLevel is an integer, name, type and schoolOfMind is a varchar.
+ Example tuple: 666, dark, 9999, chaotic-evil
+
+A table called muggle with columns called id, mindSet, discernibility
+ Id is an integer,  mindSet is a varchar and discernibility is a float
+ Example tuple: 69, open, .78
+
+ 2: For the tables above insert these tuples (all values given on one line, figure out how to put it into the tables)
+id            name           title                         type            powerLevel         schoolOfMind       mindSet      discernibility
+123         jamie           boss                          fire               99999                  neutral-good
+432         Mordo         evil henchman        dark             67676                 chaotic-evil
+666         benedict     super-visor             sub-dark      9001                   neutral-evil
+1              zippy           founder                                                                                                           neurotic
+2              guppy          local fish                                                                                                                                .01
+
+3: do the following commands
+a: update the table mages with a new row called belief with type varchar
+b: update belief on tuple with id 666 on table mage with the value dogmatic
+c: delete the row with id 2 on the table muggle
+d:  delete the row with id 3 on the table muggle
+e: delete the table muggle
+
+*/
+
+
+create table employee(
+    id int,
+    name varchar,
+    title varchar
+);
+
+--A table called mage with columns called id, type, powerLevel, schoolOfMind
+-- Id and powerLevel is an integer, name, type and schoolOfMind is a varchar.
+-- Example tuple: 666, dark, 9999, chaotic-evil
+
+create table mage(
+    id int,
+    type varchar,
+    powerLevel int,
+    schoolOfMind varchar
+);
+
+/*
+A table called muggle with columns called id, mindSet, discernibility
+ Id is an integer,  mindSet is a varchar and discernibility is a float
+ Example tuple: 69, open, .78
+*/
+
+create table muggle(
+    id int,
+    mindSet varchar,
+    discernibility float
+);
