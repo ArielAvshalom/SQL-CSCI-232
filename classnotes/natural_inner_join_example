@@ -1,0 +1,16 @@
+select * from employee;
+
+select * from positions;
+
+select * from employee
+    natural inner join
+position;
+
+select employee.eid, employee.fname, employee.lname, company.name as company_name from employee
+natural inner join position
+natural inner join department
+natural inner join company
+
+where company.name = 'Floogle'
+and employee.fname like 'A%'
+and employee.lname like 'C%'
