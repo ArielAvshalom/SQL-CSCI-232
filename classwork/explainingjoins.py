@@ -80,3 +80,26 @@ Vs the cost of logarthmic:
 Vs the cost of linear
 
 10^6 + 10^6 = 2 million
+
+""" A problem that can really be bad
+select eid 
+    from employee
+inner join 
+    position
+    on employee.eid = position.eid
+;
+
+--This will by default try to do a hash join
+--that will either be O(n+m) or O(nlogm) depending on the way your hash is created. The data structure behind the scenes matters.
+
+
+select eid 
+    from employee
+inner join 
+    position
+    on employee.eid > position.eid;
+--don't do this! It becomes nested!
+--instead do comparisons in the where or having clause (if using a group by statement)
+
+
+"""
