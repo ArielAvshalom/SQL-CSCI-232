@@ -26,3 +26,23 @@ create view le3famsize as
 
 select avg(dailyalc) from gt3famsize;
 select avg(dailyalc) from le3famsize;
+
+select avg(weekendalc) from gt3famsize
+union
+select avg(weekendalc) from le3famsize;
+
+select dailyalc, count(dailyalc) from gt3famsize group by dailyalc
+union
+select dailyalc, count(dailyalc) from le3famsize group by dailyalc;
+
+
+
+with cte1 as (
+    SELECT ...
+)
+
+cte2 as(
+
+)
+
+select stuff from cte1 cte2
