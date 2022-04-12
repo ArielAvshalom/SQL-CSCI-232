@@ -46,3 +46,21 @@ cte2 as(
 )
 
 select stuff from cte1 cte2
+
+
+with gt3 as (
+    SELECT dailyalc, count(dailyalc) as countofalc from alcohol 
+    where famsize = 'GT3'
+    group by dailyalc
+),
+
+le3 as(
+    SELECT dailyalc, count(dailyalc) as countofalc from alcohol 
+    where famsize = 'LE3'
+    group by dailyalc
+
+)
+
+select gt3.countofalc from gt3 
+union 
+select le3.countofalc from le3;
