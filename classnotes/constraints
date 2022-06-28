@@ -1,0 +1,22 @@
+--constraints
+
+create table gary(
+    id int not null unique
+);
+
+--constraints limit the inputs on values
+
+create table prices(
+    id int primary key,
+    price numeric add constraint price_greater_than_zero check(price>0)
+);
+
+insert into prices values(1, 10.00);
+insert into prices values(2, 0);
+
+--sales prices
+alter table prices add sales_price numeric check(sales_price> 0 and sales_price <price);
+
+update prices set sales_price = 9 where id = 1;
+
+--2 tables with at least 3 columns, 2 constraints
